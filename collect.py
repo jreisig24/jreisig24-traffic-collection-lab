@@ -5,7 +5,7 @@ import random
 from datetime import datetime
 
 # ODOT Camera URL
-BASE_URL = "https://www.tripcheck.com/roadcams/cams/ORE22%20at%20Cordon%20Rd%20EB_pid4547.jpg"
+BASE_URL = "https://www.tripcheck.com/roadcams/cams/US20%20at%20Spring%20Hill%20Dr%20N_pid4636.jpg"
 
 def download_images():
     headers = {
