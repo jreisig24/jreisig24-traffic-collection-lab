@@ -14,8 +14,8 @@ def download_images():
     
     print("Starting collection session...")
 
-    for i in range(5):
-        # Cache-buster to force a fresh image
+    # Change range(5) to range(6) for six captures
+    for i in range(6):
         image_url = f"{BASE_URL}?{random.random()}"
         
         try:
@@ -26,14 +26,14 @@ def download_images():
                 
                 with open(filename, 'wb') as f:
                     f.write(response.content)
-                print(f"Captured {i+1}/5: {filename}")
+                # Updated print statement to show /6
+                print(f"Captured {i+1}/6: {filename}")
             else:
                 print(f"Failed capture {i+1}. Status: {response.status_code}")
         except Exception as e:
             print(f"Error during capture {i+1}: {e}")
         
-        # Wait 4 minutes between captures
-        if i < 4:
+        if i < 5:
             print("Waiting 4 minutes...")
             time.sleep(240)
 
