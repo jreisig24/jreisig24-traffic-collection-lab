@@ -2,9 +2,11 @@ name: Traffic Data Collector
 
 on:
   schedule:
-    # Runs at 8:00 AM, 12:00 PM, and 5:00 PM Oregon time (PDT)
-    - cron: '0 15,19,0 * * *'
-  workflow_dispatch: 
+    # 14:00 UTC is 7 AM PDT (Aiming for an 8 AM actual start)
+    # 18:00 UTC is 11 AM PDT (Aiming for a 12 PM actual start)
+    # 23:00 UTC is 4 PM PDT (Aiming for a 5 PM actual start)
+    - cron: '0 14,18,23 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   build:
